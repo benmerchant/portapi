@@ -1,0 +1,30 @@
+{
+  "name": "portapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benmerchant/portapi.git"
+  },
+  "author": "Ben Merchant <benjaminmerchant@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benmerchant/portapi/issues"
+  },
+  "homepage": "https://github.com/benmerchant/portapi#readme",
+  "dependencies": {
+    "chai": "4.1.2",
+    "chai-http": "4.0.0",
+    "mocha": "5.1.1",
+    "nodemon": "1.17.3"
+  },
+  "devDependencies": {
+    "body-parser": "1.18.2",
+    "express": "4.16.3",
+    "mongoose": "5.0.16"
+  }
+}
