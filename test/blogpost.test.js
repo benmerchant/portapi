@@ -18,11 +18,12 @@ describe('Blog Posts', () => {
   describe('/POST/ - publish a BlogPost', () => {
     it('it should POST a new BlogPost', done => {
       const NewBlogPost = {
-        url: 'my-first-blog-post',
+        // url: 'my-first-blog-post', // you can remove this line
         title: 'My First Blog Post',
         body: 'This is some text. Lorem ipsum... etc...',
         tags: ['blog', 'nodejs', 'api']
       };
+      const theURL = NewBlogPost.title.toLowerCase().split(' ').join('-');
       chai.request(server)
           .post(blogURL)
           .send(NewBlogPost)
@@ -33,7 +34,7 @@ describe('Blog Posts', () => {
               .eql('Successfully published blog post.');
             expect(res.body).to.have.property('blogPost');
             expect(res.body.blogPost).to.have.property('url')
-              .and.be.an('string').eql(NewBlogPost.url);
+              .and.be.an('string').eql(theURL);
             expect(res.body.blogPost).to.have.property('title')
               .and.be.an('string').eql(NewBlogPost.title);
             expect(res.body.blogPost).to.have.property('body')
@@ -48,7 +49,7 @@ describe('Blog Posts', () => {
     });
     it('it should not POST a new BlogPost without a body', done => {
       const NewBlogPost = {
-        url: 'my-first-blog-post',
+        // url: 'my-first-blog-post', // you can remove this line
         title: 'My First Blog Post',
         tags: ['blog', 'nodejs', 'api']
       };
